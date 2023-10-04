@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h5 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .alert-success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .alert-danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Styling for the OTP button */
+        #generateOTP {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        #generateOTP:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+
+        /* Styling for the OTP input field */
+        #otp {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5>Book an Appointment</h5>
+        <form id="appointmentFormFields" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number (10 digits)</label>
+                <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" required> 
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar" class="form-label">Aadhar Number (12 digits)</label>
+                <input type="tel" class="form-control" id="aadhar" pattern="[0-9]{12}" required>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="generateOTP">Generate OTP</button>
+            <div id="otpField" class="form-group" style="display: none;">
+                <label for="otp" class="form-label">Enter OTP</label>
+                <input type="text" class="form-control" id="otp" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Success message div -->
+        <div id="message" class="alert alert-success mt-3" style="display: none;">Appointment booked successfully!</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+        // Function to generate a random 6-digit OTP
+        function generateOTP() {
+            return Math.floor(100000 + Math.random() * 900000);
+        }
+
+        // Event listener for OTP generation button
+        document.getElementById('generateOTP').addEventListener('click', function() {
+            const aadharField = document.getElementById('aadhar');
+            const otpField = document.getElementById('otpField');
+            const otpInput = document.getElementById('otp');
+            
+            // Validate Aadhar number format
+            if (!aadharField.checkValidity()) {
+                alert('Please enter a valid 12-digit Aadhar number.');
+                return;
+            }
+
+            // Generate OTP
+            const otp = generateOTP();
+
+            // Display OTP input field
+            otpField.style.display = 'block';
+
+            // Autofill OTP input with generated OTP
+            otpInput.value = otp;
+        });
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // You can add your form validation logic here if needed
+
+            // Assuming the form is valid, display the success message
+            document.getElementById('message').innerHTML = 'Appointment booked successfully!';
+            document.getElementById('message').classList.remove('alert-danger');
+            document.getElementById('message').classList.add('alert-success');
+            document.getElementById('message').style.display = 'block';
+
+            // Optionally, you can reset the form fields after submission
+            document.getElementById('appointmentFormFields').reset();
+        }
+    </script>
+</body>
+</html>

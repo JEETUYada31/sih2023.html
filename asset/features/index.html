@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Web Features</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"/>
+
+  <!-- Add your custom CSS here -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2em 0;
+    }
+    .row h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 3.75em;
+      margin: 0.6em 0;
+      font-weight: 600;
+      color: #070024;
+    }
+    .column {
+      padding: 1em;
+      margin: 1em;
+      flex: 1;
+      background-color: #fff;
+      border-radius: 0.5em;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+    .column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+    .card {
+      padding: 2em;
+      text-align: center;
+    }
+    .icon {
+      font-size: 2.5em;
+      height: 2em;
+      width: 2em;
+      margin: auto;
+      background-color: #397ef6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+    }
+    .icon:before {
+      position: absolute;
+      content: "";
+      height: 1.5em;
+      width: 1.5em;
+      border: 0.12em solid #397ef6;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+    .card h3 {
+      font-size: 1.3em;
+      margin: 1em 0 0.5em 0;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #070024;
+    }
+    .card p {
+      line-height: 1.6;
+      color: #333;
+      margin: 1em 0;
+    }
+    .card:hover .icon:before {
+      height: 2.25em;
+      width: 2.25em;
+    }
+    @media screen and (min-width: 768px) {
+      .row {
+        padding: 2em 5em;
+      }
+    }
+    @media screen and (min-width: 992px) {
+      .row {
+        padding: 2em;
+      }
+      .card {
+        padding: 3em;
+      }
+      .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="row">
+      <h1>Our Features</h1>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3>User-Friendly</h3>
+          <p>Our digital system for appointment scheduling and doctor availability management ensures a user-friendly experience. Patients can easily book appointments online and receive real-time updates on their appointment status and any changes in the doctor's availability.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Super Secure</h3>
+          <p>Data privacy and security are our top priorities. We adhere to strict data privacy regulations and implement necessary security measures to protect patient information. This includes encrypting data transmission, implementing access controls, and regularly monitoring for any potential vulnerabilities.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3>Quick Support</h3>
+          <p>We provide quick and efficient support to make booking appointments more convenient and easy for potential patients. Our integration with calendars streamlines appointment management for a hassle-free experience.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3>Extended Hours</h3>
+          <p>We offer extended hours for your convenience. Our digital system automates appointment scheduling by utilizing advanced technologies such as RFID, face detection, and AI to allocate appointment slots based on doctor availability. This reduces wait times and enhances the patient experience.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-money-bill"></i>
+          </div>
+          <h3>Cost-Effective</h3>
+          <p>We prioritize cost-effectiveness during the development and maintenance of our website. We utilize open-source technologies to minimize licensing costs and explore cloud hosting options for scalability and cost optimization.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+          <h3>Bed Availability</h3>
+          <p>Our Hospital Bed Management System provides real-time status information for all available beds and occupied beds, allowing for efficient bed utilization. This system reduces the time spent counting and recording bed availability, benefiting both staff and management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add more sections and content as needed -->
+
+</body>
+</html>

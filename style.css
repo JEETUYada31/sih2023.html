@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #ADD8E6;
+    text-align: center;
+}
+   /* Initially show the search input */
+   .search-form {
+    display: block;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Make the form width equal to the button width */
+}
+
+/* Style for the datalist options */
+#departmentOptions option {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover effect for datalist options */
+#departmentOptions option:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Style for the hospital list container */
+#hospitalListContainer {
+    text-align: center;
+    margin-top: 20px; /* Add some spacing between the form and the hospital list */
+}
+
+/* Style for hospital list items */
+#hospitalList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#hospitalList ul li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+#doctorInfoContainer{
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
